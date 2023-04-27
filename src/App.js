@@ -17,7 +17,6 @@ function App() {
           alt="Hintergrund Kreise"
         ></BackgroundCircles>
         <TwoCircles src={kreis2} alt="Hintergrund Kreise"></TwoCircles>
-        <Circle src={kreis1} alt="Hintergrund Kreise"></Circle>
         <Logo src={logo} alt="Logo" />
         <CompanyName>
           <Span>modern mind</Span> recruitment
@@ -58,13 +57,14 @@ export default App;
 
 const Wrapper = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
 `;
 
 const BackgroundCircles = styled.img`
   position: absolute;
   top: -50px;
-  right: -100px;
+  right: 0;
   z-index: -1;
   width: 1100px;
   @media (max-width: 1200px) {
@@ -79,18 +79,7 @@ const BackgroundCircles = styled.img`
 const TwoCircles = styled.img`
   position: absolute;
   top: 100px;
-  left: -30px;
-  width: 80vw;
-  z-index: -1;
-  @media (min-width: 1008px) {
-    display: none;
-  }
-`;
-
-const Circle = styled.img`
-  position: absolute;
-  right: -80px;
-  bottom: -50px;
+  left: -20px;
   width: 80vw;
   z-index: -1;
   @media (min-width: 1008px) {
