@@ -3,9 +3,8 @@ import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import telefon from "../src/svg/Telefon.png";
 import mail from "../src/svg/Mail.png";
-import kreis3 from "../src/svg/DreiKreise.svg";
+import kreis3 from "../src/svg/Element 3.svg";
 import kreis2 from "../src/svg/ZweiKreise.svg";
-import kreis1 from "../src/svg/Kreis.svg";
 
 function App() {
   return (
@@ -17,6 +16,7 @@ function App() {
           alt="Hintergrund Kreise"
         ></BackgroundCircles>
         <TwoCircles src={kreis2} alt="Hintergrund Kreise"></TwoCircles>
+
         <Logo src={logo} alt="Logo" />
         <CompanyName>
           <Span>modern mind</Span> recruitment
@@ -63,13 +63,13 @@ const Wrapper = styled.div`
 
 const BackgroundCircles = styled.img`
   position: absolute;
-  top: -50px;
+  top: 120px;
   right: 0;
   z-index: -1;
-  width: 1100px;
+  width: 50vw;
+  opacity: 0.9;
   @media (max-width: 1200px) {
-    width: 1000px;
-    right: -200px;
+    width: 53vw;
   }
   @media (max-width: 1007px) {
     display: none;
@@ -79,9 +79,10 @@ const BackgroundCircles = styled.img`
 const TwoCircles = styled.img`
   position: absolute;
   top: 100px;
-  left: -20px;
-  width: 80vw;
+  left: 0px;
+  width: 70vw;
   z-index: -1;
+  opacity: 0.9;
   @media (min-width: 1008px) {
     display: none;
   }
@@ -99,6 +100,7 @@ const Logo = styled.img`
 
 const CompanyName = styled.div`
   font-family: "Comfortaa", cursive;
+  font-weight: bold;
   color: rgb(0, 167, 155);
   font-size: 40px;
   padding: 120px 20px 120px 140px;
