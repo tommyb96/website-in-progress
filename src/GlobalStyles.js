@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-* {
+body {
 margin: 0;
 background-color:rgba(220,233, 252);
 font-family:  futura-pt, sans-serif;
