@@ -184,6 +184,7 @@ const CompanyNameMobile = styled.div`
   font-size: 20px;
   text-align: center;
   padding-bottom: 40px;
+  padding-top: 15px;
 
   @media (min-width: 568px) {
     display: none;
