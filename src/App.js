@@ -49,7 +49,7 @@ function App() {
           </a>
         </Kontaktdaten>
         <CompanyNameMobile>
-          modern mind <Span>recruitment</Span>
+          <Span>modern mind</Span> recruitment
         </CompanyNameMobile>
       </Wrapper>
     </>
@@ -91,7 +91,7 @@ const BackgroundCircles = styled.img`
 
 const TwoCircles = styled.img`
   position: absolute;
-  top: 100px;
+  top: 50px;
   right: -30px;
   width: 70vw;
   z-index: -1;
@@ -181,10 +181,10 @@ const CompanyNameMobile = styled.div`
   font-family: "Comfortaa", cursive;
   font-weight: bold;
   color: rgb(0, 167, 155);
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
-  padding-bottom: 40px;
-  padding-top: 15px;
+  padding-bottom: 23px;
+  padding-top: 5px;
 
   @media (min-width: 568px) {
     display: none;
