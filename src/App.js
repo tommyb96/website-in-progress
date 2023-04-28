@@ -1,22 +1,24 @@
 import logo from "../src/svg/logo.svg";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
-import telefon from "../src/svg/Telefon.png";
-import mail from "../src/svg/Mail.png";
-import kreis3 from "../src/svg/Element 3.svg";
+import telefon from "../src/svg/Telefon.svg";
+import mail from "../src/svg/Mail.svg";
+import kreis3 from "../src/svg/DreiKreise.svg";
 import kreis2 from "../src/svg/ZweiKreise.svg";
+import shadow from "../src/svg/Shadow.png";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Wrapper>
-        <BackgroundCircles
-          src={kreis3}
-          alt="Hintergrund Kreise"
-        ></BackgroundCircles>
-        <TwoCircles src={kreis2} alt="Hintergrund Kreise"></TwoCircles>
+      <Shadow src={shadow} alt="Hintergrund Schatten"></Shadow>
+      <BackgroundCircles
+        src={kreis3}
+        alt="Hintergrund Kreise"
+      ></BackgroundCircles>
 
+      <Wrapper>
+        <TwoCircles src={kreis2} alt="Hintergrund Kreise"></TwoCircles>
         <Logo src={logo} alt="Logo" />
         <CompanyName>
           <Span>modern mind</Span> recruitment
@@ -39,15 +41,16 @@ function App() {
           Bei Interesse melden Sie sich vorerst unter:
         </DritterAbsatz>
         <Kontaktdaten>
-          <StyledP>
-            <img src={mail} alt="Telefon" width="43px"></img>&nbsp;&nbsp;{" "}
-            info@modernmindrecruitment.com
-          </StyledP>
-          <StyledP style={{ fontSize: "16px" }}>
-            <img src={telefon} alt="Telefon" width="45px"></img>&nbsp;&nbsp;+49
-            152 0211 21 64
-          </StyledP>
+          <a href="mailto:info@modernmindrecruitment.com">
+            <img src={mail} alt="Telefon" width="70vw"></img>
+          </a>{" "}
+          <a href="tel:+4915202112164">
+            <img src={telefon} alt="Telefon" width="70vw"></img>
+          </a>
         </Kontaktdaten>
+        <CompanyNameMobile>
+          modern mind <Span>recruitment</Span>
+        </CompanyNameMobile>
       </Wrapper>
     </>
   );
@@ -55,19 +58,29 @@ function App() {
 
 export default App;
 
+const Shadow = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 `;
 
 const BackgroundCircles = styled.img`
   position: absolute;
-  top: 120px;
+  top: 90px;
   right: 0;
   z-index: -1;
   width: 50vw;
-  opacity: 0.9;
+  opacity: 0.4;
   @media (max-width: 1200px) {
     width: 53vw;
   }
@@ -79,10 +92,10 @@ const BackgroundCircles = styled.img`
 const TwoCircles = styled.img`
   position: absolute;
   top: 100px;
-  left: 0px;
+  right: -30px;
   width: 70vw;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.4;
   @media (min-width: 1008px) {
     display: none;
   }
@@ -110,6 +123,10 @@ const CompanyName = styled.div`
     padding: 80px 30px 80px 85px;
     font-size: 30px;
   }
+
+  @media (max-width: 568px) {
+    display: none;
+  }
 `;
 
 const Span = styled.span`
@@ -117,12 +134,15 @@ const Span = styled.span`
 `;
 
 const ErsterAbsatz = styled.div`
-  padding: 10px 13vw 10px 13vw;
+  padding: 10px 13vw 30px 13vw;
   max-width: 620px;
   font-size: 27px;
   font-family: futura-pt, sans-serif;
   font-weight: 500;
   font-style: normal;
+  @media (max-width: 568px) {
+    padding: 190px 13vw 10px 13vw;
+  }
 `;
 const StyledSpan = styled.span`
   font-family: "Righteous", cursive;
@@ -132,7 +152,7 @@ const StyledSpan = styled.span`
 const ZweiterAbsatz = styled.div`
   font-size: 20px;
   max-width: 620px;
-  padding: 10px 13vw 10px 13vw;
+  padding: 10px 13vw 30px 13vw;
 `;
 
 const DritterAbsatz = styled.div`
@@ -140,20 +160,32 @@ const DritterAbsatz = styled.div`
   font-style: normal;
   font-size: 20px;
   max-width: 620px;
-  padding: 10px 13vw 10px 13vw;
+  padding: 10px 13vw 30px 13vw;
 `;
 
 const Kontaktdaten = styled.div`
   font-size: 18px;
   max-width: 620px;
-  padding: 10px 13vw 10px 11vw;
 
-  @media (max-width: 640px) {
-    padding: 10px 13vw 10px 8vw;
+  padding: 10px 13vw 10px;
+
+  a {
+    padding: 10px;
+  }
+  @media (max-width: 568px) {
+    text-align: center;
   }
 `;
 
-const StyledP = styled.p`
-  display: flex;
-  align-items: center;
+const CompanyNameMobile = styled.div`
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  color: rgb(0, 167, 155);
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 40px;
+
+  @media (min-width: 568px) {
+    display: none;
+  }
 `;
